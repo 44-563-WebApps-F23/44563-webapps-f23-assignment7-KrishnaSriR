@@ -54,8 +54,9 @@
 	}
     function remove(){
         let mergerItems=document.getElementsByClassName("merger")
+        console.log(mergerItems.length)
         if(mergerItems.length>0){
-            mergerItems[Math.floor(length/2)].remove()
+            mergerItems[Math.floor(mergerItems.length/2)].remove()
         }
 
     }
