@@ -139,6 +139,7 @@
             <img id="i24" src="location.png" onclick="check(24)" alt="locimg">
         </div>
     </div>
+    <button class="btn btn-danger" onclick="newGame()">New Game</button>
    </div>
    <script>
     let ids=['i0','i1','i2','i3','i4','i5','i6','i7','i8','i9','i10','i11','i12','i13',
@@ -224,7 +225,15 @@
         return res
        
     }
-
+    function newGame(){
+        console.log("new gamebegins")
+     treasureLocation = Math.floor(Math.random() * 25);
+    console.log("treasureLocation : "+treasureLocation);
+     trapLocation=Math.floor(Math.random() * 25);
+    console.log("trapLocation : "+trapLocation);
+    checkCount=0
+    penalty=0
+    }
            
 
     

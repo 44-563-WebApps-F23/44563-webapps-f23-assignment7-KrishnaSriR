@@ -36,6 +36,8 @@
 		<button onclick="makeNewDiv()">Add end</button>
         <button onclick="addFront()">Add front</button>
 		<button onclick="remove()">Remove</button>
+		<button onclick="swap()">Swap</button>
+
 
 	
 	
@@ -68,5 +70,33 @@
 		let container = document.getElementById('target')
 		container.insertBefore(element, container.firstChild)
     }
+	function swap(){
+		let container = document.getElementById('target')
+	let mergerItems = document.getElementsByClassName('merger');
+    let length = mergerItems.length;
+
+    if (length > 1) {
+        let i1 = Math.floor(Math.random() * length);
+        let i2 = Math.floor(Math.random() * length);
+
+        while (Math.abs(i1 - i2) === 1) {
+            i2 = Math.floor(Math.random() * length);
+        }
+        let item1 = mergerItems[i1];
+        let item2 = mergerItems[i2];
+        let nextItem1 = mergerItems[i1 + 1];
+        let nextItem2 = mergerItems[i2 + 1];
+        if (nextItem1) {
+            container.insertBefore(item2, nextItem1);
+        } else {
+            container.appendChild(item2);
+        }
+        if (nextItem2) {
+            container.insertBefore(item1, nextItem2);
+        } else {
+            container.appendChild(item1);
+        }
+    }
+	}
 </script>
 </html>	
