@@ -27,6 +27,8 @@
     <div style="color: salmon;" id="penalty">Penalty is zero.</div> 
     <div style="color: brown;" onclick="help()">Click for help.</div>
     <div style="color: darkcyan;" id="help">Help report</div>
+    <br>
+    <button class="btn btn-danger" onclick="newGame()">New Game</button>
     </div> 
 		</br>
     <div class="container">
@@ -139,7 +141,6 @@
             <img id="i24" src="location.png" onclick="check(24)" alt="locimg">
         </div>
     </div>
-    <button class="btn btn-danger" onclick="newGame()">New Game</button>
    </div>
    <script>
     let ids=['i0','i1','i2','i3','i4','i5','i6','i7','i8','i9','i10','i11','i12','i13',
@@ -226,13 +227,19 @@
        
     }
     function newGame(){
-        console.log("new gamebegins")
+    console.log("new gamebegins")
      treasureLocation = Math.floor(Math.random() * 25);
     console.log("treasureLocation : "+treasureLocation);
      trapLocation=Math.floor(Math.random() * 25);
     console.log("trapLocation : "+trapLocation);
     checkCount=0
     penalty=0
+    document.getElementById("locations").innerHTML="Number of locations checked is "+checkCount+"."
+    document.getElementById("penalty").innerHTML="Penalty is "+penalty+"."
+    let images=document.getElementsByTagName("img")
+    for (var i = 0; i < images.length; i++) {
+    images[i].src = "location.png";
+    }
     }
            
 
